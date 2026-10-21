@@ -69,7 +69,6 @@ export default function Home() {
             key={feature.title}
             className="rounded-xl border border-slate-800 bg-slate-900 p-8 transition hover:border-cyan-500"
           >
-            <div className="mb-4 text-4xl">{feature.icon}</div>
             <h3 className="mb-3 text-xl font-bold">
               {feature.title}
             </h3>
