@@ -5,6 +5,12 @@ import { useState } from "react";
 
 export default function Home() {
   const [count, setCount] = useState(0);
+  const [randomNumber, setRandomNumber] = useState<number>(0);
+
+  function generateRandomNumber() {
+    const num = Math.floor(Math.random() * 10000) + 1;
+    setRandomNumber(num);
+  }
 
   const features = [
     {
@@ -109,6 +115,29 @@ export default function Home() {
           </button>
         </div>
       </section>
+
+      {/*Random Number Generator*/}
+      <section className="border-t border-slate-800 px-6 py-20 text-center">
+        <h2 className="text-3xl font-bold">
+          Random Number Generator
+        </h2>
+
+        <p className="mt-3 text-slate-400">
+          Find out your lucky number!
+        </p>
+
+        <div className="mt-8 text-6xl font-bold text-cyan-400">
+          {randomNumber}
+        </div>
+
+        <button
+          onClick={generateRandomNumber}
+          className="mt-8 rounded-lg bg-cyan-500 px-8 py-3 font-semibold text-slate-950 hover:bg-cyan-400"
+        >
+          Generate Number
+        </button>
+      </section>
+
 
       {/* Footer */}
       <footer className="border-t border-slate-800 px-6 py-8 text-center text-sm text-slate-500">
